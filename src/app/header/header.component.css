@@ -1,0 +1,21 @@
+.container-fluid {
+    position: relative;
+}
+.navbar-brand {
+    margin-top: 15px;
+    font-size: 35px;
+}
+.nav.navbar-nav li {
+    font-size: 20px;
+    margin-top: 19px;
+}
+
+li:nth-child(2) {
+    color: black;
+    margin-top: 15px;
+    position: absolute;
+    right: 3%;
+}
+button {
+    border: none;
+}

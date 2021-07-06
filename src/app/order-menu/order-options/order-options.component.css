@@ -1,0 +1,72 @@
+#details-button {
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 43px;
+}
+svg[class="bi bi-cart-check-fill"] {
+    color: rgb(54, 54, 54);
+}
+
+svg [class="bi bi-plus-circle"] {
+    color: white;
+    position: absolute;
+    padding: auto;
+}
+#cart-button {
+    position: absolute;
+    color: white;
+    background-color: gray;
+    top: 55%;
+    left: 70%;
+    height: 51px;
+    width: 118px;
+    border-radius: 30px;
+
+}
+.food-container {
+    margin: 30px auto;
+    width: 90%;
+    height: 50%;
+    border-radius: 30px;
+    border: 3px dotted rgb(112, 100, 250);
+    position: relative;
+    background: linear-gradient(to bottom right, rgb(250, 248, 152), rgba(250, 248, 152, 0.5));
+}
+.food-container li {
+    margin: 10px 0 10px 0px;
+    list-style: none;
+    padding: auto;
+}
+
+.food-container li img {
+    height: 125px;
+    width: 150px;
+    float: left;
+    margin: auto 30px auto 0;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#food-options li:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.75em;
+    color: rgb(66, 66, 66)
+}
+
+input[type="number"] {
+    position: absolute;
+    width: 10%;
+    top: 83%;
+    right: 15%;
+}
+
+label[for="quantity"] {
+    position: absolute;
+    top: 86%;
+    right: 26%;
+    font-size: .9em;
+}
+#cart-button:hover {
+    background-color: rgb(85, 85, 85);
+}

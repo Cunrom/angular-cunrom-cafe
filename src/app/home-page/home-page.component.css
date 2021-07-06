@@ -1,0 +1,12 @@
+#food-banner {
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+#food-banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+    border: 5px solid rgb(184, 140, 29);
+}
