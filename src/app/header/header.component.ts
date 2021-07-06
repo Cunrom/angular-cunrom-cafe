@@ -8,7 +8,9 @@ import { OrderService } from '../order-menu/order.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router, private orderService: OrderService) { }
+  constructor(private router: Router, private orderService: OrderService) {
+}
+  start: boolean = true;
   collapsed: boolean = true;
   totalItem: number = 0;
   ngOnInit(): void {

@@ -5,5 +5,5 @@ export class Food {
         public imagePath: string, 
         public calories: number,
         public description: string,
-        public servingSize: number) {}
+        public prepareTime: number) {}
 }

@@ -1,6 +1,6 @@
 #details-container {
-    position: absolute;
-    width: 90%;
+    position: fixed;
+    width: 45%;
     margin: 30px auto;
     border: 3px solid rgb(112, 100, 250);
     height: 37em;
@@ -29,7 +29,7 @@ p {
     display: block;
     text-align: center;
     font-style: italic;
-    font-size: 2em;
-    margin: auto;
+    font-size: 1.8em;
+    margin-top: 3vh;
     font-family: Arial, Helvetica, sans-serif;
 }

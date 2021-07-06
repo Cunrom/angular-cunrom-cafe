@@ -24,7 +24,7 @@ svg [class="bi bi-plus-circle"] {
     height: 8vh;
     width: 18vh;
     border-radius: 30px;
-    cursor: pointer;
+    cursor:pointer;
 }
 .food-container {
     margin: 30px auto;
@@ -61,13 +61,13 @@ input[type="number"] {
     position: absolute;
     width: 10%;
     top: 83%;
-    right: 15%;
+    right: 14%;
 }
 
 label[for="quantity"] {
     position: absolute;
     top: 86%;
-    right: 26%;
+    right: 25%;
     font-size: .9em;
 }
 #cart-button:disabled {
