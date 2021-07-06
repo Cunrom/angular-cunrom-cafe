@@ -3,6 +3,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 43px;
+    transition-duration: 0.4s;
 }
 svg[class="bi bi-cart-check-fill"] {
     color: rgb(54, 54, 54);
@@ -14,13 +15,14 @@ svg [class="bi bi-plus-circle"] {
     padding: auto;
 }
 #cart-button {
+    transition-duration: 0.4s;
     position: absolute;
     color: white;
     background-color: gray;
     top: 55%;
-    left: 70%;
-    height: 51px;
-    width: 118px;
+    margin-left: 26.8vw;
+    height: 8vh;
+    width: 18vh;
     border-radius: 30px;
 
 }
@@ -51,7 +53,8 @@ svg [class="bi bi-plus-circle"] {
 #food-options li:nth-child(2) {
     font-weight: bold;
     font-size: 1.75em;
-    color: rgb(66, 66, 66)
+    color: rgb(66, 66, 66);
+    margin-right: 10%;
 }
 
 input[type="number"] {
