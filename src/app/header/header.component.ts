@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
-
+  collapsed: boolean = false;
   ngOnInit(): void {
   }
   onViewCartClick() {

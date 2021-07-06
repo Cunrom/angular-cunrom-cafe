@@ -1,9 +1,12 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
+        <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+            <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+        </button>
             <a title="Home Page" class="navbar-brand" routerLink="/">Cunrom's Cafe</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
                 <li><a title="Order Food" routerLink="/order">Order</a></li>
                 <li><button (click)="onViewCartClick()" title="View Cart"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
