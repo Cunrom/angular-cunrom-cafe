@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
-  collapsed: boolean = false;
+  collapsed: boolean = true;
+  windowCartResized: boolean = false;
+  cartCollapsed: boolean = false;
   ngOnInit(): void {
   }
   onViewCartClick() {
     this.router.navigate(["/shopping-cart"])
+  }
+  onCollapseClick() {
+    this.collapsed = !this.collapsed;
+    this.cartCollapsed = !this.cartCollapsed;
+  }
+  onWindowResize() {
+    this.collapsed = true;
+    this.windowCartResized = true;
   }
 }
