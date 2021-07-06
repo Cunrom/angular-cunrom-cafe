@@ -13,4 +13,6 @@ export class OrderService {
         new Food ("Fried Egg", 4, "assets/images/sunnysideup.jpg", 97, "Egg that is fried sunny-side-up.", 1),
     ];
     cart: cartItem[] = [];
+    totalItem: number = 0;
+    totalItemEmitter = new EventEmitter<number>();
 }

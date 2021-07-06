@@ -10,19 +10,25 @@ import { OrderService } from '../order.service';
 })
 export class OrderOptionsComponent implements OnInit {
   @Input() option: Food;
-  @ViewChild('quantity') quantity: ElementRef;
+  quantity: number = 1;
   constructor(private orderService: OrderService) { }
-
   ngOnInit(): void {
   }
   onDetailsClick() {
     this.orderService.optionDetails.emit(this.option);
   }
   onAddToCart() {
-    if (this.quantity.nativeElement.value <= 0) {
-      alert("Please enter a quantity above 0!")
-    } else if (this.quantity.nativeElement.value > 0) {
-      this.orderService.cart.push(new cartItem(this.option.name, this.option.price, this.quantity.nativeElement.value))
+    if (this.quantity > 0) {
+      this.orderService.cart.push(new cartItem(this.option.name, this.option.price, this.quantity))
+      this.orderService.totalItem += this.quantity;
+      this.orderService.totalItemEmitter.emit(this.orderService.totalItem);
+    }
+  }
+  quantityCheck() {
+    if (this.quantity <= 0) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

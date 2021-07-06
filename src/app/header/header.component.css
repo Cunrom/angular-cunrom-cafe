@@ -30,3 +30,24 @@ button {
 #hamburger-icon {
     margin-top: 11%;
 }
+
+#cart {
+    position: relative;
+}
+
+#cart .badge {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    padding: 4px 7px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+
+.notification-available {
+    display: block;
+}
+.notification-unavailable {
+    display: none;
+}

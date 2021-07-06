@@ -24,7 +24,7 @@ svg [class="bi bi-plus-circle"] {
     height: 8vh;
     width: 18vh;
     border-radius: 30px;
-
+    cursor: pointer;
 }
 .food-container {
     margin: 30px auto;
@@ -70,6 +70,10 @@ label[for="quantity"] {
     right: 26%;
     font-size: .9em;
 }
-#cart-button:hover {
-    background-color: rgb(85, 85, 85);
+#cart-button:disabled {
+    color: rgb(77, 77, 77);
+    background-color: rgb(61, 61, 61);
+    cursor: default;
 }
+
+

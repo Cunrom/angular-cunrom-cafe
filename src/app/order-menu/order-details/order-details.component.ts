@@ -15,7 +15,11 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.descClicked = false;
     this.orderService.optionDetails.subscribe( (optionData: Food) => {
-      this.descClicked = true;
+      if (optionData === this.option) {
+        this.descClicked = !this.descClicked;
+      } else if (optionData != this.option) {
+        this.descClicked = true;
+      }
       this.option = optionData;
     })
 

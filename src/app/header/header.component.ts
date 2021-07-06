@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderService } from '../order-menu/order.service';
 
 @Component({
   selector: 'app-header',
@@ -7,21 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private orderService: OrderService) { }
   collapsed: boolean = true;
-  windowCartResized: boolean = false;
-  cartCollapsed: boolean = false;
+  totalItem: number = 0;
   ngOnInit(): void {
+      this.orderService.totalItemEmitter.subscribe( (quantity: number) => {
+        this.totalItem = quantity;
+      })
   }
   onViewCartClick() {
     this.router.navigate(["/shopping-cart"])
   }
-  onCollapseClick() {
-    this.collapsed = !this.collapsed;
-    this.cartCollapsed = !this.cartCollapsed;
-  }
-  onWindowResize() {
-    this.collapsed = true;
-    this.windowCartResized = true;
+  hasItem() {
+    if (this.orderService.cart.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
