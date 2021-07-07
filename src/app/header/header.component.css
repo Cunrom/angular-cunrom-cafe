@@ -4,6 +4,7 @@
 .navbar-brand {
     margin-top: 15px;
     font-size: 35px;
+    cursor: pointer;
 }
 .nav.navbar-nav li {
     font-size: 20px;

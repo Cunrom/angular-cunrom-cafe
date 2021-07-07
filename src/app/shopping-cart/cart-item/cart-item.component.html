@@ -1,7 +1,6 @@
 <div class="cart-container">
     <ul>
-        <li>{{ cartItem.name }}</li>
-        <li>Cost: ${{ cartItem.price }}</li>
-        <li>Quantity: {{ cartItem.quantity }}</li>
+        <li>{{ cartItem.name }} x{{ cartItem.quantity }}</li>
+        <li>Cost: ${{ totalCost }}</li>
     </ul>
 </div>

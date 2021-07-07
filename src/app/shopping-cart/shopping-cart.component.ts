@@ -1,16 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { cartItem } from '../order-menu/cartitem.model';
-import { OrderService } from '../order-menu/order.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { cartItem } from '../shared/cartitem.model';
+import { OrderService } from '../shared/order.service';
 
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })
-export class ShoppingCartComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private orderService: OrderService) { }
   cartItems: cartItem[];
-  ngOnInit(): void {
-    this.cartItems = this.orderService.cart;
+  totalCost: number;
+  subscription: Subscription;
+  ngOnInit() {
+    this.cartItems = this.orderService.cartItemList;
+    this.totalCost = this.orderService.totalCost;
+    this.subscription = this.orderService.itemCartCreated.subscribe((cartItemList: cartItem[]) => {
+        this.cartItems = cartItemList;
+        this.totalCost = this.orderService.totalCost;
+    });
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe;
   }
 }

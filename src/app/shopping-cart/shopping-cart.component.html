@@ -1,5 +1,5 @@
 <div>
     <h1>Your items:</h1>
-    <h2>(Not Finished)</h2>
     <app-cart-item *ngFor="let item of cartItems" [cartItem]="item"></app-cart-item>
+    <h2>Total Cost: ${{ totalCost }}</h2>
 </div>

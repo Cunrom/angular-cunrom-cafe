@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Food } from '../food.model';
-import { OrderService } from '../order.service';
+import { Subscription } from 'rxjs';
+import { Food } from '../../shared/food.model';
+import { OrderService } from '../../shared/order.service';
 
 @Component({
   selector: 'app-order-details',
@@ -12,9 +13,10 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
   constructor(private orderService: OrderService) { }
   option: Food;
   descClicked: boolean;
+  subscription: Subscription;
   ngOnInit(): void {
     this.descClicked = false;
-    this.orderService.optionDetails.subscribe( (optionData: Food) => {
+    this.subscription = this.orderService.optionDetails.subscribe( (optionData: Food) => {
       if (optionData === this.option) {
         this.descClicked = !this.descClicked;
       } else if (optionData != this.option) {
@@ -25,6 +27,6 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
 
   }
   ngOnDestroy() {
-
+    this.subscription.unsubscribe;
   }
 }

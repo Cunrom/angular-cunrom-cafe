@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { cartItem } from 'src/app/order-menu/cartitem.model';
-import { OrderService } from 'src/app/order-menu/order.service';
+import { cartItem } from 'src/app/shared/cartitem.model';
+import { OrderService } from 'src/app/shared/order.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -10,9 +10,11 @@ import { OrderService } from 'src/app/order-menu/order.service';
 export class CartItemComponent implements OnInit {
   
   @Input() cartItem: cartItem;
+  totalCost: number;
 
-  constructor(private orderService: OrderService) { }
+  constructor() { }
 
   ngOnInit(): void {
+      this.totalCost = this.cartItem.price * this.cartItem.quantity;
   }
 }

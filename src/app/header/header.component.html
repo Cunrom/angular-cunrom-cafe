@@ -10,7 +10,7 @@
         </div>
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="this.collapsed = true">
             <ul class="nav navbar-nav">
-                <li><a routerLink="/order">Order</a></li>
+                <li><a routerLink="/order" style="cursor: pointer;">Order</a></li>
                 <li>
                     <div id="cart">
                         <button (click)="onViewCartClick()" title="View Cart"><svg [ngClass]="{'collapsedCart': !collapsed}" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@
                         <span class="badge" [ngClass]="{'collapsedCart': !collapsed, 'notification-available': hasItem(), 'notification-unavailable': !hasItem()}">{{ totalItem }}</span>
                     </div>
                 </li>
-                <li><a [ngClass]="{'collapsedCart': collapsed}" routerLink="/shopping-cart">View Cart</a></li>            
+                <li><a [ngClass]="{'collapsedCart': collapsed}" routerLink="/shopping-cart" style="cursor: pointer;">View Cart</a></li>            
                 </ul>
         </div>
     </div>

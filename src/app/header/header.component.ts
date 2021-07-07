@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OrderService } from '../order-menu/order.service';
+import { OrderService } from '../shared/order.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["/shopping-cart"])
   }
   hasItem() {
-    if (this.orderService.cart.length > 0) {
+    if (this.orderService.cartItemList.length > 0) {
       return true;
     } else {
       return false;

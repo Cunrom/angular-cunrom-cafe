@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Food } from './food.model';
-import { OrderService } from './order.service';
+import { Food } from '../shared/food.model';
+import { OrderService } from '../shared/order.service';
 
 @Component({
   selector: 'app-order-menu',

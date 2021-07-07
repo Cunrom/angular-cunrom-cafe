@@ -1,3 +1,4 @@
+import { isTemplateDiagnostic } from "@angular/compiler-cli/src/ngtsc/typecheck/diagnostics";
 import { Injectable } from "@angular/core";
 import { EventEmitter } from "@angular/core";
 import { cartItem } from "./cartitem.model";
@@ -15,7 +16,24 @@ export class OrderService {
         new Food("Chicken Salad", 16, "assets/images/chicken-salad.jpg", 105, "Chicken salad is any salad with chicken as a main ingredient", 8),
         new Food("Hamburger", 5, "assets/images/hamburger.jpg", 270, "Hamburger is a sandwich consisting of one or more cooked patties of ground meat, usually beef", 5)
     ];
-    cart: cartItem[] = [];
+
+    cartItemList: cartItem[] = [];
     totalItem: number = 0;
+    totalCost: number = 0;
+    itemCartCreated = new EventEmitter<cartItem[]>();
     totalItemEmitter = new EventEmitter<number>();
+
+    updateCartItem(item: cartItem) {
+        for (let i = 0; i < this.cartItemList.length; i++) {
+            if (this.cartItemList[i].name === item.name) {
+                this.cartItemList[i].quantity += item.quantity;
+                this.itemCartCreated.emit(this.cartItemList);
+                this.totalCost += (item.quantity * item.price);
+                return this.cartItemList;
+            }
+        }
+        this.cartItemList.push(item);
+        this.itemCartCreated.emit(this.cartItemList);
+        this.totalCost += (item.quantity * item.price);
+    }
 }
