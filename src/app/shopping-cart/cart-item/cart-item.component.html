@@ -1,6 +1,10 @@
 <div class="cart-container">
-    <ul>
-        <li>{{ cartItem.name }} x{{ cartItem.quantity }}</li>
-        <li>Cost: ${{ totalCost }}</li>
-    </ul>
+    <div id="cart-items">
+        <ul>
+            <img [src]="cartItem.imagePath" [alt]="cartItem.name">
+            <li>{{ cartItem.name }}</li>
+            <li>x{{ cartItem.quantity }}</li>
+            <li>${{ totalCost }}</li>
+        </ul>
+    </div>
 </div>

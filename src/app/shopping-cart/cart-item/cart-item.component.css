@@ -1,0 +1,40 @@
+.cart-container {
+    position: relative;
+    text-align: center;
+    border: 3px solid gray;
+    border-radius: 30px;
+    width: 44%;
+    margin: auto;
+}
+li:nth-child(2) {
+    font-weight: bold;
+    font-size: 2em;
+}
+li:nth-child(3) {
+    position: absolute;
+    font-weight: bold;
+    font-size: 3em;
+    color: green;
+    right: 8%;
+    top: 14%;
+
+}
+li:nth-child(4) {
+    font-weight: bold;
+    font-size: 2em;
+    color: green;
+}
+#cart-items li {
+    list-style: none;
+    padding: 4% 0;
+    margin: auto;
+}
+#cart-items img {
+    position: absolute;
+    width: 23%;
+    height: 78%;
+    left: 3%;
+    top: 11%;
+    border-radius: 22px;
+    object-fit: cover;
+}

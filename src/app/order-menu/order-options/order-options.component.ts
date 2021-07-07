@@ -19,7 +19,7 @@ export class OrderOptionsComponent implements OnInit {
   }
   onAddToCart() {
     if (this.quantity > 0) {
-      this.orderService.updateCartItem({name: this.option.name, price: this.option.price, quantity: this.quantity});
+      this.orderService.updateCartItem({name: this.option.name, imagePath: this.option.imagePath, price: this.option.price, quantity: this.quantity});
       this.orderService.totalItem += this.quantity;
       this.orderService.totalItemEmitter.emit(this.orderService.totalItem);
     }
